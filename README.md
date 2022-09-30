@@ -8,7 +8,7 @@
 * Made on [OkHttp](http://square.github.io/okhttp/).
 * Easy to do http request, just make request and listen for the response.
 
-## Using Library In Your Application
+## Using Library In Your Project
 
 Add this in your pom.xml dependencies.
 
