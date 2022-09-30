@@ -2,6 +2,7 @@ package com.jimmyworks.easyhttp;
 
 import com.jimmyworks.easyhttp.builder.BodyRequestBuilder;
 import com.jimmyworks.easyhttp.builder.RequestBuilder;
+import com.jimmyworks.easyhttp.builder.UploadRequestBuilder;
 import com.jimmyworks.easyhttp.service.DoRequestService;
 import com.jimmyworks.easyhttp.type.HttpMethod;
 import lombok.NonNull;
@@ -45,6 +46,14 @@ public class EasyHttp {
         return new BodyRequestBuilder(url, method);
     }
 
+    public static UploadRequestBuilder upload(@NonNull String url) {
+        return new UploadRequestBuilder(url);
+    }
+
+    public static UploadRequestBuilder upload(@NonNull HttpMethod httpMethod, @NonNull String url) {
+        return new UploadRequestBuilder(url, httpMethod);
+    }
+
     public static void cancel(String tag) {
         List<Call> callList = DoRequestService.callMap.get(tag);
 
@@ -58,7 +67,7 @@ public class EasyHttp {
 
     public static void cancelAll() {
         for (Map.Entry<String, List<Call>> entry : DoRequestService.callMap.entrySet()) {
-            for (Call call: entry.getValue()) {
+            for (Call call : entry.getValue()) {
                 call.cancel();
             }
         }
