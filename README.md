@@ -27,7 +27,7 @@ Add this in your pom.xml dependencies.
 **Example:**
 
 ```java
-// Do in main thread
+// Do sync
 String response = EasyHttp.get(url).build().getAsString();
 
 // Do async
@@ -62,7 +62,7 @@ EasyHttp.get(url)
 **Example:**
 
 ```java
-// Do in main thread
+// Do sync
 String response = EasyHttp.post(url).jsonBody(obj).build().getAsString();
 
 // Do async
@@ -96,7 +96,7 @@ Have the value settings in the get example.
 **Example:**
 
 ```java
-// Do in main thread
+// Do sync
 String response =
 	EasyHttp.upload(url)
     .addMultipartParam("text", "text")
@@ -170,7 +170,7 @@ requestBuilder.build().getAsString(new StringResponseListener() {
 **Example:**
 
 ```java
-// Do in main thread
+// Do sync
 String response = EasyHttp.get(url).build().getAsString();
 
 // Do async
@@ -195,7 +195,7 @@ EasyHttp.get(url)
 
 ```java
 // Use class
-// Do in main thread
+// Do sync
 CustomObj response = EasyHttp.get(url).build().getJsonAsObject(CustomObj.class);
 
 // Do async
@@ -216,7 +216,7 @@ EasyHttp.get(url)
   });
 
 // Use Gson TypeToken
-// Do in main thread
+// Do sync
 CustomObj response = EasyHttp.get(url).build().getJsonAsObject(new TypeToken<CustomObj>() {});
 
 // Do async
@@ -242,7 +242,7 @@ EasyHttp.get(url)
 **Example:**
 
 ```java
-// Do in main thread
+// Do sync
 EasyHttp.get(url).build().download(file);
 
 // Do async
