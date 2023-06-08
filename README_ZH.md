@@ -1,5 +1,5 @@
 # Android Easy Http Library
-<img src="images/banner.png" />
+<img src="images/banner.png"  alt=""/>
 
 ## 關於Easy Http Library
 
@@ -14,7 +14,7 @@
 <dependency>
   <groupId>io.github.af19git5</groupId>
   <artifactId>easy-http</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 

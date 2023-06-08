@@ -1,5 +1,5 @@
 # Easy Http Library
-<img src="images/banner.png" />
+<img src="images/banner.png" alt=""/>
 
 [繁體中文文檔](README_ZH.md)
 
@@ -16,7 +16,7 @@ Add this in your pom.xml dependencies.
 <dependency>
   <groupId>io.github.af19git5</groupId>
   <artifactId>easy-http</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 

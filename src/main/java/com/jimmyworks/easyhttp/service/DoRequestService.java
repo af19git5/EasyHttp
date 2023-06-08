@@ -169,6 +169,13 @@ public class DoRequestService {
     }
 
     public <T> void getJsonAsObject(
+            @NonNull Gson gson,
+            @NonNull Class<T> clazz,
+            @NonNull JsonResponseListener<T> responseListener) {
+        getJsonAsObject(gson, StandardCharsets.UTF_8, clazz, responseListener);
+    }
+
+    public <T> void getJsonAsObject(
             @NonNull Charset charset,
             @NonNull Class<T> clazz,
             @NonNull JsonResponseListener<T> responseListener) {
@@ -206,6 +213,11 @@ public class DoRequestService {
         return getJsonAsObject(StandardCharsets.UTF_8, type);
     }
 
+    public <T> T getJsonAsObject(@NonNull Gson gson, @NonNull TypeToken<T> type)
+            throws HttpException {
+        return getJsonAsObject(gson, StandardCharsets.UTF_8, type);
+    }
+
     public <T> T getJsonAsObject(@NonNull Charset charset, @NonNull TypeToken<T> type)
             throws HttpException {
         return getJsonAsObject(new Gson(), charset, type);
@@ -226,6 +238,13 @@ public class DoRequestService {
     public <T> void getJsonAsObject(
             @NonNull TypeToken<T> type, @NonNull JsonResponseListener<T> responseListener) {
         getJsonAsObject(StandardCharsets.UTF_8, type, responseListener);
+    }
+
+    public <T> void getJsonAsObject(
+            @NonNull Gson gson,
+            @NonNull TypeToken<T> type,
+            @NonNull JsonResponseListener<T> responseListener) {
+        getJsonAsObject(gson, StandardCharsets.UTF_8, type, responseListener);
     }
 
     public <T> void getJsonAsObject(
